@@ -1,0 +1,1 @@
+export type { ParkingRecord, ParkingCalculation, TimeRange } from './model';
