@@ -1,4 +1,4 @@
-import type { ParkingCalculation, TimeRange } from '@/entities/parking';
+import type { ParkingCalculation } from '@/entities/parking';
 
 // 상수 정의
 const MINUTES_PER_TICKET = 10; // 10분당 1장
@@ -8,11 +8,15 @@ const NIGHT_FREE_START_MINUTE = 30;
 const NIGHT_FREE_END = 24; // 24시까지 무료
 
 /**
- * 네이버 시계 기준 한국 시간 가져오기 (UTC+09:00)
+ * 한국 시간 가져오기 (KST/UTC+09:00)
+ * 시스템의 현재 시간대와 상관없이 정확한 한국 시간을 반환
  */
 export const getKoreanTime = (): Date => {
   const now = new Date();
-  const koreanTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+
+  // 한국 시간대로 현재 시간을 가져옴
+  const koreanTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
+
   return koreanTime;
 };
 

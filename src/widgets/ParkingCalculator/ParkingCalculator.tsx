@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/shared';
-import { Card, CardContent, CardHeader, CardTitle, Input, Button } from '@/shared/ui';
-import { calculateParkingFee, formatDuration, formatDateTime, getKoreanTime } from '@/features/parking-calculator';
+import { Card, CardContent, Input, Button } from '@/shared/ui';
+import { calculateParkingFee, formatDuration, getKoreanTime } from '@/features/parking-calculator';
 import { saveParkingRecord } from '@/features/parking-storage';
 import type { ParkingCalculation } from '@/entities/parking';
 
